@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="Expander.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Expander"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Expander.Controls"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" VerticalAlignment="Top" Margin="12,10,12,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <controls:ExpanderControl Grid.Row="0" x:Name="ExpanderControl" IsEnabled="{Binding IsExpandable, Mode=TwoWay}"
+                                      IsExpanded="{Binding IsExpanded, Mode=TwoWay}"
+                                      DataContext="{Binding ElementName=ExpandableBalanceControlRoot}"
+                                      Style="{StaticResource ExpanderControlStyle}">
+            <controls:ExpanderControl.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Tap me to show or hide the content" TextWrapping="WrapWholeWords" FontWeight="Bold"/>
+                </DataTemplate>
+            </controls:ExpanderControl.HeaderTemplate>
+            <controls:ExpanderControl.Items>
+                <TextBlock TextWrapping="WrapWholeWords" Text="Carbon fiber, .28 caliber, made in China. If you wanna kill a public servant, Mr Maroni... I recommend you buy American. Does it come in black? There you are! There is nothing to fear but fear itself! It was a dog. It was a big dog. What if, before she died, she wrote a letter saying she chose Harvey Dent over you? And what if, to spare you pain, I burnt that letter? Are you so desperate to fight criminals that you lock yourself in to take them on one at a time ? Speak of the devil, and he shall appear."/>
+            </controls:ExpanderControl.Items>
+        </controls:ExpanderControl>
+        <TextBlock Grid.Row="1" Text="Ì will be pushed down"/>
+    </Grid>
+</Page>
